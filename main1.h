@@ -16,6 +16,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 
+volatile sig_atomic_t sigint_received = 0;
 extern char **environ;
 
 char **split_commands(char *str, char *delim);
@@ -24,4 +25,6 @@ void execute_command(char **argv);
 char *get_env(char *command);
 void freewords(char **commands);
 void print_environment(void);
+void cleanup(char **args, char *command, char *command_copy);
+void sigint_handler(int signum);
 #endif

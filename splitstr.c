@@ -29,7 +29,7 @@ char **split_commands(char *str, char *delim)
 	words = malloc(sizeof(char *) * (strCount + 1));
 	if (words == NULL)
 	{
-		printf("Could not allocate memory\n");
+		perror("Could not allocate memory\n");
 		return (NULL);
 	}
 	sp = strtok(str, delim);
@@ -48,5 +48,6 @@ char **split_commands(char *str, char *delim)
 		_strcpy(words[index], sp);
 		sp = strtok(NULL, delim);
 	}
+	words[index] = NULL;
 	return (words);
 }

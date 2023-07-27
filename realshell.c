@@ -10,6 +10,7 @@
  */
 int main(int ac, char *argv[])
 {
+	signal(SIGINT, sigint_handler);
 	int interactive_mode = isatty(STDIN_FILENO);
 	char *command = NULL, *command_copy = NULL;
 	size_t command_len = 0;
