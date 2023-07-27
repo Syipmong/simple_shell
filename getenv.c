@@ -24,9 +24,6 @@ char *get_env(char *command)
 		{
 			directory_length = _strlen(path_token);
 			file_path = malloc(command_length + directory_length + 2);
-			if (file_path == NULL)
-				free(path_copy);
-				return (NULL);
 			_strcpy(file_path, path_token);
 			_strcat(file_path, "/");
 			_strcat(file_path, command);

@@ -24,7 +24,7 @@ void cleanup(char **args, char *command, char *command_copy)
 {
 	int i;
 
-	for (i = 0; args[i] != NULL, i++)
+	for (i = 0; args[i] != NULL; i++)
 	{
 		free(args[i]);
 	}

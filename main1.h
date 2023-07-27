@@ -16,7 +16,6 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-volatile sig_atomic_t sigint_received = 0;
 extern char **environ;
 
 char **split_commands(char *str, char *delim);
